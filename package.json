@@ -1,0 +1,14 @@
+{
+  "name": "metadata-recover",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "json-2-csv": "^3.18.0",
+    "lodash": "^4.17.21",
+    "mongodb": "^4.13.0"
+  },
+  "scripts": {
+    "start": "node -r esm main.js"
+  }
+}
