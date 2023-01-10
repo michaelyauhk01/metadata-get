@@ -3,6 +3,15 @@ import { writeFile } from "fs";
 import { json2csvAsync } from "json-2-csv";
 import _ from "lodash";
 
+const OrderStatus = {
+  0: "Failed",
+  1: "Paid",
+  2: "Pending",
+  3: "Cancelled",
+  4: "Unsubmitted",
+  5: "Capturing",
+};
+
 const mongoUri = "";
 const organizationNo = "";
 
@@ -48,6 +57,7 @@ async function main() {
       return {
         transactionId: order.walletTransactionId,
         orderNo: order.orderNo,
+        status: OrderStatus[order.status],
         metadata: JSON.stringify({
           projectNo: project.projectNo,
           projectTitle: project.name,
